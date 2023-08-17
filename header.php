@@ -20,6 +20,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                     <a class="nav-link" href="/users">Users</a>
+                    <a class="nav-link" href="/add-users">Add new user</a>
                     <a class="nav-link" href="/depts">Departments</a>
                 </div>
                 </div>

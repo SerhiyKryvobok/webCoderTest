@@ -1,10 +1,10 @@
 <?php include_once('./header.php'); ?>
     <div class="container">
         <div class="row mt-5">
-            <h3>Departments table here!</h3>
+            <h3><?php echo $page_title; ?></h3>
         </div>
         <div class="row mt-1">
-            <form action="/depts-add" method="POST">
+            <form action="/add-dept" method="POST">
                 <div class="form-group d-flex">
                     <input type="text" name="deptname" class="form-control" placeholder="Print department name here to add...">
                     <button type="submit" class="btn btn-primary">Add</button>
@@ -24,7 +24,7 @@
                             <td><?php echo $key; ?></td>
                             <td><?php echo $value; ?></td>
                             <td>
-                                <form action="/depts-add" method="POST" class="m-0 text-center">
+                                <form action="/add-dept" method="POST" class="m-0 text-center">
                                     <input type="hidden" name="deptid" value="<?php echo $key; ?>">
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
