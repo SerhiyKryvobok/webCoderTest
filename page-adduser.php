@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row mt-5">
             <h3><?php echo $page_title; ?></h3>
-            <div class="col-md-8 mt-3 d-flex justify-content-center">
+            <div class="col-md-8 mt-3 mb-5 d-flex justify-content-center">
                 <form action="/add-user-new" method="POST" class="w-100">
                     <div class="form-group m-2">
                         <label for="username">User name:</label>

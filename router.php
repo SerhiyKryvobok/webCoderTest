@@ -15,13 +15,24 @@ if ($actual_path == "/users") {
 
     foreach ($dbdata as $el) {
         $deptname = $mysqli->query("SELECT name FROM `depts` WHERE id = " . $el['dep'] . "")->fetch_array(MYSQLI_ASSOC);
-
-        $el['dep'] = $deptname['name'];
+        if ($deptname != null) $el['dep'] = $deptname['name'];
+        else $el['dep'] = '';
 
         array_push($users_data, $el);
     }
 
     include_once('./page-users.php');
+} else if (preg_match("!/user/[0-9]!", $actual_path)) {
+    $actual_route = substr($actual_path, (strrpos($actual_path,'/') + 1), $url_length);
+   
+     $user_data = [];
+
+    $mysqli = new webDB;
+    $dbdata = $mysqli->query("SELECT * FROM `users` WHERE id=" . $actual_route . "")->fetch_all(MYSQLI_ASSOC);
+
+    $page_title = "User " . $dbdata[0]['name'];
+
+    include_once('./page-user.php');
 } else if ($actual_path == "/add-users") {
     $page_title = "Add new user";
 
@@ -36,9 +47,9 @@ if ($actual_path == "/users") {
 
     include_once('./page-adduser.php');
 } else if ($actual_path == "/add-user-new") {
-    $page_title = "Add new user";
+    $page_title = "Users";
 
-    $user_data = [];
+    $users_data = [];
 
     $mysqli = new webDB;
 
@@ -59,7 +70,8 @@ if ($actual_path == "/users") {
 
     foreach ($dbdata as $el) {
         $deptname = $mysqli->query("SELECT name FROM `depts` WHERE id = " . $el['dep'] . "")->fetch_array(MYSQLI_ASSOC);
-        $el['dep'] = $deptname;
+        if ($deptname != null) $el['dep'] = $deptname['name'];
+        else $el['dep'] = '';
         array_push($users_data, $el);
     }
 

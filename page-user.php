@@ -1,6 +1,6 @@
 <?php include_once('./header.php'); ?>
     <div class="container">
-        <div class="row mt-5">
+        <div class="row mt-5 justify-content-center">
             <h3><?php echo $page_title; ?></h3>
             <div class="col-12 mt-3 mb-5 d-flex justify-content-center">
                 <table class="table">
@@ -14,10 +14,10 @@
                         <th>Department</th>
                     </thead>
                     <tbody>
-                        <?php foreach ($users_data as $user) { ?>
+                        <?php foreach ($dbdata as $user) { ?>
                         <tr>
                             <td><?php echo $user['id']; ?></td>
-                            <td><a href="/user/<?php echo $user['id']; ?>"><?php echo $user['name']; ?></a></td>
+                            <td><?php echo $user['name']; ?></td>
                             <td><?php echo $user['email']; ?></td>
                             <td><?php echo $user['adress']; ?></td>
                             <td><?php echo $user['tel']; ?></td>

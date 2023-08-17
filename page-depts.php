@@ -12,7 +12,7 @@
             </form>
         </div>
         <div class="row mt-1">
-            <div class="col-10 mt-3 d-flex justify-content-center">
+            <div class="col-10 mt-3 mb-5 d-flex justify-content-center">
                 <table class="table">
                     <thead>
                         <th>#</th>
